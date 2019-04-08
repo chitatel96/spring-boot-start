@@ -12,7 +12,7 @@ public class UserService {
     @Transactional (readOnly = true)
     public UserDto getById(Long userId){
 
-        return new UserDto(UserRepository.getOne(userId));
+        return new UserDto(userRepository.getOne(userId));
     }
     @Transactional
     public UserDto save(CreateUserCommand command){

@@ -14,10 +14,10 @@ public class UserController {
 
     @GetMapping("/api/users/{userId}")
     public ResponseEntity<UserDto> getUserById (@PathVariable Long userId) {
-    return ResponseEntity.ok(userService.getById(userId));
+        return ResponseEntity.ok(userService.getById(userId));
     }
     @PostMapping("/api/users")
     public ResponseEntity<UserDto> createUser (@RequestBody @Valid CreateUserCommand comand){
-        return ResponseEntity.ok(UserService.save(comand));
+        return ResponseEntity.ok(userService.save(comand));
     }
 }
